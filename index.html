@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест Генераторы және Онлайн Викторина</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Онлайн Викторина & Тест Генераторы</h1>
+
+        <!-- 1. ТЕСТ ҚҰРУ БӨЛІМІ -->
+        <div id="creator-box" class="card">
+            <h2>Жаңа сұрақ қосу</h2>
+            <input type="text" id="question-input" placeholder="Сұрақты жазыңыз...">
+            <input type="text" id="option1" placeholder="А нұсқасы">
+            <input type="text" id="option2" placeholder="В нұсқасы">
+            <input type="text" id="option3" placeholder="С нұсқасы">
+            
+            <label for="correct-answer">Дұрыс жауапты таңдаңыз:</label>
+            <select id="correct-answer">
+                <option value="0">А нұсқасы</option>
+                <option value="1">В нұсқасы</option>
+                <option value="2">С нұсқасы</option>
+            </select>
+            
+            <button onclick="addQuestion()">Сұрақты сақтау</button>
+            <p id="question-count">Қосылған сұрақтар саны: 0</p>
+            <button class="start-btn" onclick="startQuiz()">Викторинаны бастау 🚀</button>
+        </div>
+
+        <!-- 2. ВИКТОРИНАДАН ӨТУ БӨЛІМІ -->
+        <div id="quiz-box" class="card hide">
+            <h2 id="quiz-question">Сұрақ осында шығады...</h2>
+            <div id="options-container"></div>
+            <button id="next-btn" class="hide" onclick="nextQuestion()">Келесі сұрақ ➔</button>
+        </div>
+
+        <!-- 3. НӘТИЖЕ БӨЛІМІ -->
+        <div id="result-box" class="card hide">
+            <h2>🎉 Викторина Аяқталды!</h2>
+            <p id="score-text"></p>
+            <button onclick="restartQuiz()">Қайтадан өту 🔄</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
